@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rahul & Vrindha — Reception</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --page: #f4ead8;
+      --card: #fff6ea;
+      --gold: #c6a15b;
+      --gold-deep: #b08d3e;
+      --ink: #3a2f1e;
+      --muted: #6b5a45;
+      --border: #e2c9a0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      background: var(--page);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .wrap {
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold-deep);
+      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .kicker {
+      letter-spacing: 0.22em;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      font-size: 3.1rem;
+      color: var(--gold-deep);
+      margin: 12px 0 6px;
+      line-height: 1.1;
+    }
+    .rule {
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      margin: 16px auto;
+      position: relative;
+    }
+    .rule::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .label {
+      font-size: 1.25rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .date {
+      font-size: 1.25rem;
+      margin-top: 8px;
+    }
+    .time {
+      font-size: 1.15rem;
+      color: var(--gold-deep);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+    .count {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 32px 0 24px;
+    }
+    .count div {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 4px;
+    }
+    .count strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--gold-deep);
+      font-weight: 500;
+    }
+    .count span {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin-bottom: 16px;
+    }
+    .card h2 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .card p {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--gold-deep);
+      color: #fffaf3;
+      text-decoration: none;
+      padding: 11px 24px;
+      border-radius: 999px;
+      letter-spacing: 0.06em;
+      font-size: 0.95rem;
+    }
+    footer {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="badge">Reception invitation</p>
+    <p class="kicker">You are invited to celebrate</p>
+    <h1>Rahul & Vrindha</h1>
+    <div class="rule"></div>
+    <p class="label">The Reception</p>
+    <p class="date">Sunday, 6 December 2026</p>
+    <p class="time">6:00 PM onwards</p>
+
+    <div class="count" id="count">
+      <div><strong id="d">–</strong><span>Days</span></div>
+      <div><strong id="h">–</strong><span>Hours</span></div>
+      <div><strong id="m">–</strong><span>Minutes</span></div>
+      <div><strong id="s">–</strong><span>Seconds</span></div>
+    </div>
+
+    <article class="card">
+      <h2>When & where</h2>
+      <p>Venue details will be shared closer to the date.</p>
+    </article>
+
+    <article class="card">
+      <h2>Kindly reply</h2>
+      <p>Please confirm if you can join us.</p>
+      <a class="btn" id="rsvp" href="#">RSVP on WhatsApp</a>
+    </article>
+
+    <p class="note">This invitation is for the reception only.</p>
+
+    <footer>Rahul & Vrindha · 6 December 2026</footer>
+  </div>
+
+  <script>
+    // Target: 6 December 2026, 6:00 PM IST
+    const target = new Date("2026-12-06T18:00:00+05:30").getTime();
+
+    function tick() {
+      const now = Date.now();
+      let diff = Math.max(0, target - now);
+
+      const days = Math.floor(diff / 86400000);
+      diff -= days * 86400000;
+      const hours = Math.floor(diff / 3600000);
+      diff -= hours * 3600000;
+      const minutes = Math.floor(diff / 60000);
+      diff -= minutes * 60000;
+      const seconds = Math.floor(diff / 1000);
+
+      document.getElementById("d").textContent = days;
+      document.getElementById("h").textContent = String(hours).padStart(2, "0");
+      document.getElementById("m").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("s").textContent = String(seconds).padStart(2, "0");
+    }
+
+    tick();
+    setInterval(tick, 1000);
+
+    // WhatsApp RSVP — replace the number below with yours
+    const phone = "91XXXXXXXXXX"; // e.g. 919876543210
+    const message = encodeURIComponent("Hello, I am confirming for Rahul and Vrindha's reception on 6 December 2026.");
+    document.getElementById("rsvp").href = `https://wa.me/${phone}?text=${message}`;
+  </script>
+</body>
+</html>
